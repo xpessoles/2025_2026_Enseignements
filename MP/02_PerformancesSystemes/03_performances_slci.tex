@@ -1,11 +1,13 @@
 \newcommand{\repChap}{\repRel/PSI_Cy_02_PredictionPerfomances}
 \renewcommand{\repExo}{\repChap/Chapitre_01_Stabilite}
 
+\iflivret
 % ======= COURS ======= 
 \renewcommand{\nomExo}{Cours}
 \graphicspath{{\repStyle/png}{\repExo/\nomExo/images}}
 \input{\repExo/\nomExo/\nomExo}
 % ===================== 
+\else\fi
 
 
 \renewcommand{\repChap}{\repRel/PSI_Cy_02_PredictionPerfomances}
