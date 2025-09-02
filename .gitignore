@@ -10,3 +10,7 @@
 *.gnuplot
 *.table
 Full_Polys/FULL-POLY/FULL_POLY.pdf
+*.maf
+*.mtc0
+*.mtc
+*.mtc1

@@ -38,6 +38,7 @@
 \graphicspath{{images/}{./}} % Paths where images are looked for
 
 \makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
+\usepackage{minitoc}
 
 
 \begin{document}
@@ -102,6 +103,14 @@
 \setcounter{chapter}{1}
 %\input{01_multiphysique}
 %\input{02_modelisation_slci}
+\setchapterimage{Fond_SLCI.png}
+\setchapterpreamble[u]{\margintoc}
+%\setcounter{chapter}{1}
+\dominitoc
+\chapter{Rappels sur la détermination des performances des systèmes asservis}
+\minitoc
+
+
 \input{03_performances_slci_td}
 %
 %\input{03_pfd_1d}
