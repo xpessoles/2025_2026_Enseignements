@@ -49,7 +49,7 @@
 %\title[SII en PSI*]{SII en PSI* -- Exercices d'application}
 %\author[XP]{Xavier Pessoles}
 %\date{\today}
-%%\publishers{An Awesome Publisher} 	
+%%\publishers{An Awesome Publisher}
 %
 %%----------------------------------------------------------------------------------------
 %%
@@ -85,6 +85,7 @@
 \livrettrue % Livrettrue :  eleve sans les corrections
 \collefalse
 \normaltrue
+\proftrue
 %%%%%
 \setcounter{cptApplication}{1}
 \setcounter{cptTD}{1}
@@ -93,7 +94,7 @@
 
 
 \newcounter{decsec}
-\setcounter{decsec}{203} % 
+\setcounter{decsec}{203} % exo de fin du poly précéndent
 
 % Macro pour les sections décroissantes
 \renewcommand{\exer}[1]{
@@ -103,8 +104,9 @@
     \addtocounter{subparagraph}{-1} % Empêche l'incrémentation du compteur de section normal
 }
 
+\setchapterimage{Fond_DDS.png}
 \chapter*{Les Petits Devoirs du Soir -- DDS}
-\proftrue
+
 \input{all_tex}
 %\proftrue
 %\setcounter{chapter}{0}
