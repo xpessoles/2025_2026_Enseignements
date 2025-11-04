@@ -1,4 +1,3 @@
-
 % Load the kaobook class
 \documentclass[
 	fontsize=10pt, % Base font size
@@ -8,12 +7,9 @@
 ]{kaobook}
 
 
-\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PCSI}
-
-%\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PTSI -- PCSI}
-
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI$\star$}
 \newcommand{\auteur}{Xavier Pessoles}
-\newcommand{\repRel}{../../..}
+\newcommand{\repRel}{../../../..}
 
 \input{\repRel/Style/packages_v2}
 \newcommand{\repStyle}{\repRel/Style}
@@ -22,14 +18,13 @@
 \usepackage{\repStyle/UPSTI_pedagogique}
 
 
-% Choose the language
 \frenchsetup{StandardItemLabels=true}
-
+%% \usepackage[english=british]{csquotes}	% English quotes
 
 
 % Load the bibliography package
 \usepackage{kaobiblio}
-%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
+\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
 
 % Load mathematical packages for theorems and related environments
 \usepackage{kaotheorems}
@@ -49,7 +44,7 @@
 %%----------------------------------------------------------------------------------------
 
 \titlehead{Document Template}
-\title[SII en PSI* - Xavier Pessoles]{SII en PSI* - Xavier Pessoles}
+\title[SII en PSI*]{SII en PSI*}
 \author[XP]{Xavier Pessoles}
 \date{\today}
 %\publishers{An Awesome Publisher}
@@ -57,13 +52,22 @@
 %----------------------------------------------------------------------------------------
 %
 \frontmatter % Denotes the start of the pre-document content, uses roman numerals
+%
 
+%%----------------------------------------------------------------------------------------
+%%	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
+%%----------------------------------------------------------------------------------------
+%
+%\begingroup % Local scope for the following commands
+%\tableofcontents % Output the table of contents
+%\endgroup
 
 %%----------------------------------------------------------------------------------------
 %%	MAIN BODY
 %%----------------------------------------------------------------------------------------
 %
-\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
+
 
 \setchapterstyle{kao}
 
@@ -72,55 +76,32 @@
 \graphicspath{{\repStyle/png}}
 
 \pagestyle{xp.scrheadings}
+%\pagestyle{xp.test}
+
+
+%\input{\repStyle/Cycle_01_Entete}
 
 
 
 %%%%%
-\newcommand{\repExo}{}
-\newcommand{\nomExo}{}
+\newcommand{\repExo}{Application_01_ROV}
+\newcommand{\nomExo}{Application_01_ROV}
+%\newcounter{cptApplication}[chapter]
+%\newcounter{cptTD}[chapter]
 \AtBeginEnvironment{corrige}{\small}
 
-\livretfalse % Livrettrue :  eleve sans les corrections
-\collefalse\colletrue
-\normaltrue
+\livrettrue % Livrettrue :  eleve sans les corrections
+\colletrue
 %%%%%
-\proftrue
 \newcommand{\exer}{\subsection*}
+\livretfalse
+\proftrue
 
+\setcounter{chapter}{5}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/01_Introduction/}
-\renewcommand{\nomExo}{Cy_13_Ch_01_TD_01_Tissus}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-
-
-\newpage
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
-\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/01_Introduction/}
-\renewcommand{\nomExo}{Cy_13_Ch_01_TD_02_Clever}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-%
-
-\newpage
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
-\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/01_Introduction/}
-\renewcommand{\nomExo}{Cy_13_Ch_01_TD_03_EOS}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
+\input{exos}
 
 
 
 
 \end{document}
-
