@@ -6,10 +6,10 @@
 %%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
 ]{kaobook}
 
+
 \newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI$\star$}
 \newcommand{\auteur}{Xavier Pessoles}
-\newcommand{\repRel}{../../../..}
-\newcommand{\repAct}{\repRel/PSI_ExercicesCompetences/}
+\newcommand{\repRel}{../../..}
 
 \input{\repRel/Style/packages_v2}
 \newcommand{\repStyle}{\repRel/Style}
@@ -19,13 +19,15 @@
 
 
 % Choose the language
-\frenchsetup{StandardItemLabels=true}
+%\usepackage[english]{babel} % Load characters and hyphenation
 
+\frenchsetup{StandardItemLabels=true}
+%% \usepackage[english=british]{csquotes}	% English quotes
 
 
 % Load the bibliography package
 \usepackage{kaobiblio}
-%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
+\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
 
 % Load mathematical packages for theorems and related environments
 \usepackage{kaotheorems}
@@ -38,33 +40,37 @@
 \makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
 
 
-
 \begin{document}
 
 %%----------------------------------------------------------------------------------------
 %%	BOOK INFORMATION
 %%----------------------------------------------------------------------------------------
+
+\titlehead{Document Template}
+\title[SII en PSI*]{SII en PSI*}
+\author[XP]{Xavier Pessoles}
+\date{\today}
+%\publishers{An Awesome Publisher}
+
+%----------------------------------------------------------------------------------------
 %
-%%\titlehead{Document Template}
-%\title[SII en PSI*]{SII en PSI* -- Exercices d'application}
-%\author[XP]{Xavier Pessoles}
-%\date{\today}
-%%\publishers{An Awesome Publisher}
+\frontmatter % Denotes the start of the pre-document content, uses roman numerals
 %
+
 %%----------------------------------------------------------------------------------------
-%%
-%\frontmatter % Denotes the start of the pre-document content, uses roman numerals
-%\maketitle
+%%	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
+%%----------------------------------------------------------------------------------------
 %
 %\begingroup % Local scope for the following commands
-%\tableofcontents
+%\tableofcontents % Output the table of contents
 %\endgroup
 
 %%----------------------------------------------------------------------------------------
 %%	MAIN BODY
 %%----------------------------------------------------------------------------------------
 %
-\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
+
 
 \setchapterstyle{kao}
 
@@ -73,6 +79,11 @@
 \graphicspath{{\repStyle/png}}
 
 \pagestyle{xp.scrheadings}
+%\pagestyle{xp.test}
+
+
+%\input{\repStyle/Cycle_01_Entete}
+
 
 
 %%%%%
@@ -84,44 +95,17 @@
 
 \livrettrue % Livrettrue :  eleve sans les corrections
 \collefalse
-\normaltrue
 %%%%%
-\setcounter{cptApplication}{1}
-\setcounter{cptTD}{1}
-\newcommand{\exer}{\subsection*}
-\newcommand{\td}{}
 
 
-\newcounter{decsec}
-\setcounter{decsec}{203} % exo de fin du poly précéndent
+\setcounter{chapter}{6}
 
-% Macro pour les sections décroissantes
-\renewcommand{\exer}[1]{
-    \stepcounter{decsec}
-    \addtocounter{decsec}{-2} % Décrémente le compteur de 1
-    \section*{Exercice \arabic{decsec} -- #1}
-    \addtocounter{subparagraph}{-1} % Empêche l'incrémentation du compteur de section normal
-}
-
-\setchapterimage{Fond_DDS.png}
-\chapter*{Les Petits Devoirs du Soir -- DDS}
-
-\colletrue
-\proffalse
+\normaltrue
+%\input{01_geometrie}
+\input{02_dynamique}
+%\input{03_methodologie}
 
 
-\newcommand{\dds}{SLCI/SLCI-03-SchemaBlocs/48_Quille}
-\graphicspath{{\repStyle/png/}{\repAct\dds/images/}} 
-\input{\repAct\dds/48_Quille.tex} 
 
-\colletrue
-\proftrue
 
-\renewcommand{\dds}{SLCI/SLCI-03-SchemaBlocs/48_Quille}
-\graphicspath{{\repStyle/png/}{\repAct\dds/images/}} 
-\input{\repAct\dds/48_Quille.tex} 
-
-%
-%\setcounter{chapter}{0}
-%\input{all_tex}
 \end{document}
