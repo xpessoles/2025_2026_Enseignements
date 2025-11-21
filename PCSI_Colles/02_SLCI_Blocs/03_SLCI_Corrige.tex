@@ -1,3 +1,4 @@
+
 % Load the kaobook class
 \documentclass[
 	fontsize=10pt, % Base font size
@@ -7,7 +8,10 @@
 ]{kaobook}
 
 
-\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI$\star$}
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PCSI}
+
+%\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PTSI -- PCSI}
+
 \newcommand{\auteur}{Xavier Pessoles}
 \newcommand{\repRel}{../../..}
 
@@ -19,15 +23,13 @@
 
 
 % Choose the language
-%\usepackage[english]{babel} % Load characters and hyphenation
-
 \frenchsetup{StandardItemLabels=true}
-%% \usepackage[english=british]{csquotes}	% English quotes
+
 
 
 % Load the bibliography package
 \usepackage{kaobiblio}
-\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
+%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
 
 % Load mathematical packages for theorems and related environments
 \usepackage{kaotheorems}
@@ -47,7 +49,7 @@
 %%----------------------------------------------------------------------------------------
 
 \titlehead{Document Template}
-\title[SII en PSI*]{SII en PSI*}
+\title[SII en PSI* - Xavier Pessoles]{SII en PSI* - Xavier Pessoles}
 \author[XP]{Xavier Pessoles}
 \date{\today}
 %\publishers{An Awesome Publisher}
@@ -55,22 +57,13 @@
 %----------------------------------------------------------------------------------------
 %
 \frontmatter % Denotes the start of the pre-document content, uses roman numerals
-%
 
-%%----------------------------------------------------------------------------------------
-%%	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
-%%----------------------------------------------------------------------------------------
-%
-%\begingroup % Local scope for the following commands
-%\tableofcontents % Output the table of contents
-%\endgroup
 
 %%----------------------------------------------------------------------------------------
 %%	MAIN BODY
 %%----------------------------------------------------------------------------------------
 %
-\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
-
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
 
 \setchapterstyle{kao}
 
@@ -79,33 +72,69 @@
 \graphicspath{{\repStyle/png}}
 
 \pagestyle{xp.scrheadings}
-%\pagestyle{xp.test}
-
-
-%\input{\repStyle/Cycle_01_Entete}
 
 
 
 %%%%%
-\newcommand{\repExo}{Application_01_ROV}
-\newcommand{\nomExo}{Application_01_ROV}
-%\newcounter{cptApplication}[chapter]
-%\newcounter{cptTD}[chapter]
+\newcommand{\repExo}{}
+\newcommand{\nomExo}{}
 \AtBeginEnvironment{corrige}{\small}
 
 \livretfalse % Livrettrue :  eleve sans les corrections
-\collefalse
+\collefalse\colletrue
+\normaltrue	
 %%%%%
+\proftrue
+
+\newcommand{\exer}{\subsection*}
 
 
-\setcounter{chapter}{8}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/03_ModelisationBlocs/}
+\renewcommand{\nomExo}{Cy_13_Ch_03_TD_01_Tissus}
 
-\normaltrue
-%\input{01_geometrie}
-\input{02_dynamique}
-%\input{03_methodologie}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+%
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+%\renewcommand{\nomExo}{1021_Euler}
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
+\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/03_ModelisationBlocs/}
+\renewcommand{\nomExo}{Cy_13_Ch_03_TD_02_Clever}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+%
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+%\renewcommand{\nomExo}{1021_Euler}
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
+\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/03_ModelisationBlocs/}
+\renewcommand{\nomExo}{Cy_13_Ch_03_TD_03_EOS}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+%
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+%\renewcommand{\nomExo}{1021_Euler}
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
 
 
 
 
 \end{document}
+
