@@ -1,3 +1,4 @@
+
 % Load the kaobook class
 \documentclass[
 	fontsize=10pt, % Base font size
@@ -6,9 +7,13 @@
 %%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
 ]{kaobook}
 
-\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur --  PSI$\star$}
+
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PCSI}
+
+%\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PTSI -- PCSI}
+
 \newcommand{\auteur}{Xavier Pessoles}
-\newcommand{\repRel}{../../../..}
+\newcommand{\repRel}{../../..}
 
 \input{\repRel/Style/packages_v2}
 \newcommand{\repStyle}{\repRel/Style}
@@ -74,91 +79,94 @@
 \newcommand{\repExo}{}
 \newcommand{\nomExo}{}
 \AtBeginEnvironment{corrige}{\small}
+
+\livretfalse % Livrettrue :  eleve sans les corrections
+\collefalse\colletrue
+\normaltrue
+%%%%%
+\proftrue
 \newcommand{\exer}{\subsection*}
 
-\livrettrue % Livrettrue :  eleve sans les corrections
-\colletrue
-\normaltrue
-\proftrue
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/03_ModelisationBlocs/}
+\renewcommand{\nomExo}{Cy_13_Ch_03_TD_01_Tissus}
 
-
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
 %
-%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/DYN/DYN-05-Methode}
-\renewcommand{\nomExo}{09_RT_RSG}
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+%\renewcommand{\nomExo}{1021_Euler}
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
+\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/03_ModelisationBlocs/}
+\renewcommand{\nomExo}{Cy_13_Ch_03_TD_02_Clever}
 
 \graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
 \input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%
-\cleardoublepage
+%
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+%\renewcommand{\nomExo}{1021_Euler}
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
 
-%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/DYN/DYN-05-Methode}
-\renewcommand{\nomExo}{05_RT}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%
-
-\cleardoublepage
-
-%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_Cy_04_ModelisationDynamique/Chapitre_02_TorseursCinetiquesDynamiques/}
-\renewcommand{\nomExo}{Cy_04_02_Colle_PFD_02_MesureInertie}
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
+\renewcommand{\repExo}{\repRel/PSI_Cy_13_Modelisation_SLCI/03_ModelisationBlocs/}
+\renewcommand{\nomExo}{Cy_13_Ch_03_TD_03_EOS}
 
 \graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
 \input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%
+%
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+%\renewcommand{\nomExo}{1021_Euler}
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
 
-\cleardoublepage
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
 
-
-%%%%%%%%%%
-%\renewcommand{\repExo}{\repRel/PSI_Cy_04_ModelisationDynamique/Chapitre_02_TorseursCinetiquesDynamiques/}
-%\renewcommand{\nomExo}{Cy_04_02_Colle_02_Disque}
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/SLCI/SLCI-07-Ordre12/}
+%\renewcommand{\nomExo}{541_Cours}
 %
 %\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
 %\input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%%
+%
+%\newpage
+%\clearpage
+%
+%
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/SLCI/SLCI-07-Ordre12/}
+%\renewcommand{\nomExo}{542_Cours}
+%
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
+%
+%\newpage
+%\clearpage
 
-\cleardoublepage
 
 
-%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_Cy_04_ModelisationDynamique/Chapitre_02_TorseursCinetiquesDynamiques/}
-\renewcommand{\nomExo}{Cy_04_02_TD_02_Stabilisateur_PFD}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-
-
-\cleardoublepage
-
-%%%%%%%%%%
-\normaltrue
-\difficilefalse
-\tdifficilefalse
-\renewcommand{\repExo}{\repRel/PSI_Cy_04_ModelisationDynamique/Chapitre_03_Methodologie/PFD_CO/}
-\renewcommand{\nomExo}{Cy_04_03_PFD_CO_TD_03_Gyrolock}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%
-
-%%%%%%%%%%
-\normaltrue
-\difficilefalse
-\tdifficilefalse
-\renewcommand{\repExo}{\repRel/PSI_Cy_04_ModelisationDynamique/Chapitre_03_Methodologie/PFD_CO/}
-\renewcommand{\nomExo}{Cy_04_03_PFD_CO_TD_01_ExosqueletteAtalante}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%
-
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/SLCI/SLCI-07-Ordre12/}
+%\renewcommand{\nomExo}{503_Divers}
+%
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
+%
+%
+%\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/SLCI/SLCI-07-Ordre12/}
+%\renewcommand{\nomExo}{502_Divers}
+%
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
+%
 
 
 \end{document}
-
 
