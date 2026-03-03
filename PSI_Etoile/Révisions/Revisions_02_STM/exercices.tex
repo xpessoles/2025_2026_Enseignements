@@ -24,6 +24,18 @@
 
 \renewcommand{\repExo}{\repRel/PSI_Cy_08_SystemesSequentiels/Chapitre_02_SystemesSequentiels/}
 %% ========= Application ========= 
+\renewcommand{\nomExo}{Fiche}
+\graphicspath{{\repStyle/png}{\repExo\nomExo/images}}
+
+\collefalse
+\proffalse
+\input{\repExo/Fiche/Cy_08_Ch_02_SystemesSequentiels_Fiche.tex} 
+\iflivret \else \proftrue
+\input{\repExo\nomExo/\nomExo}
+\fi
+%% ==========================
+
+%% ========= Application ========= 
 \renewcommand{\nomExo}{Cy_08_02_STM_TD_04_Skypod}
 \graphicspath{{\repStyle/png}{\repExo\nomExo/images}}
 
@@ -34,6 +46,7 @@
 \input{\repExo\nomExo/\nomExo}
 \fi
 %% ==========================
+
 
 %% ========= Application ========= 
 \renewcommand{\nomExo}{Cy_08_02_STM_TD_01_Spirit}
