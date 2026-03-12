@@ -6,8 +6,9 @@
 %%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
 ]{kaobook}
 
-\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur --  PSI$\star$}
+\newcommand{\discipline}{Informatique -- PTSI}
 \newcommand{\auteur}{Xavier Pessoles}
+\renewcommand{\auteur}{I. Cotta, X. Pessoles, V. Reydellet}
 \newcommand{\repRel}{../../../..}
 
 \input{\repRel/Style/packages_v2}
@@ -17,13 +18,17 @@
 \usepackage{\repStyle/UPSTI_pedagogique}
 
 
-% Choose the language
+
 \frenchsetup{StandardItemLabels=true}
 
 
+% Load packages for testing
+%\usepackage{blindtext}
+%\usepackage{showframe} % Uncomment to show boxes around the text area, margin, header and footer
+%\usepackage{showlabels} % Uncomment to output the content of \label commands to the document where they are used
 
 % Load the bibliography package
-\usepackage{kaobiblio}
+%\usepackage{kaobiblio}
 %\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
 
 % Load mathematical packages for theorems and related environments
@@ -31,6 +36,7 @@
 
 % Load the package for hyperreferences
 \usepackage{kaorefs}
+%\usepackage{lmodern}
 
 \graphicspath{{images/}{./}} % Paths where images are looked for
 
@@ -43,22 +49,33 @@
 %%	BOOK INFORMATION
 %%----------------------------------------------------------------------------------------
 
-\titlehead{Document Template}
-\title[SII en PSI* - Xavier Pessoles]{SII en PSI* - Xavier Pessoles}
+\titlehead{Xavier Pessoles - Informatique en PTSI}
+\title[Xavier Pessoles - Informatique en PTSI]{Xavier Pessoles - Informatique en PTSI}
 \author[XP]{Xavier Pessoles}
 \date{\today}
-%\publishers{An Awesome Publisher}
 
-%----------------------------------------------------------------------------------------
-%
-\frontmatter % Denotes the start of the pre-document content, uses roman numerals
 
+\begingroup % Local scope for the following commands
+\setstretch{1} % Uncomment to modify line spacing in the ToC
+%\tableofcontents % Output the table of contents
+\endgroup
 
 %%----------------------------------------------------------------------------------------
 %%	MAIN BODY
 %%----------------------------------------------------------------------------------------
 %
-\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
+%\setchapterstyle{kao} % Choose the default chapter heading style
+%
+%\chapter{First Chapter}
+%
+%\blindtext
+%
+%\pagelayout{wide} % No margins
+%\addpart{Title of the Part}
+%\pagelayout{margin} % Restore margins
+%
+%\chapter{Second Chapter}
 
 \setchapterstyle{kao}
 
@@ -67,60 +84,58 @@
 \graphicspath{{\repStyle/png}}
 
 \pagestyle{xp.scrheadings}
+%\pagestyle{xp.test}
+
+
+%\input{\repStyle/Cycle_01_Entete}
 
 
 
 %%%%%
 \newcommand{\repExo}{}
 \newcommand{\nomExo}{}
+%\newcounter{cptApplication}[chapter]
+%\newcounter{cptTD}[chapter]
 \AtBeginEnvironment{corrige}{\small}
-\newcommand{\exer}{\subsection*}
 
 \livrettrue % Livrettrue :  eleve sans les corrections
+\livrettrue
 \colletrue
-\normaltrue
-\proftrue
-\proffalse
+%%%%%
+
+
+
+% ========= TD ========= 
+\renewcommand{\repExo}{\repRel/Informatique/Exercices/S1_02_StructuresImbriquees/}
+\renewcommand{\nomExo}{09_Percolation}
+\graphicspath{{\repStyle/png}{\repExo\nomExo}}
+
+
+%\setchapterimage{fig_00.jpg}
+\chapter*{TP 11 \\ 
+Percolation d'une grille -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{TP 11 : 
+Percolation d'une grille-- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+
+\input{\repExo\nomExo/\nomExo}
+
 
 
 %
-%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_Cy_03_ConceptionCommande/Chapitre_01_Correction/}
-\renewcommand{\nomExo}{Cy_03_01_Colle_01_AP_Four}
+%\proffalse
+%\input{\repExo\nomExo/\nomExo} 
+%\iflivret \else \proftrue
+%\input{\repExo\nomExo/\nomExo}
+%\fi
+% ==========================
 
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%
 
-\cleardoublepage
 
-%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_Cy_03_ConceptionCommande/Chapitre_01_Correction/}
-\renewcommand{\nomExo}{Cy_03_01_Colle_02_P_AP}
 
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%
-
-\cleardoublepage
-
-%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_Cy_03_ConceptionCommande/Chapitre_01_Correction/}
-\renewcommand{\nomExo}{Cy_03_01_Colle_03_P_AP}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
-%%%%%%%%%%
-
-\cleardoublepage
-
-%%%%%%%%%
-\renewcommand{\repExo}{\repRel/PSI_Cy_03_ConceptionCommande/Chapitre_01_Correction/}
-\renewcommand{\nomExo}{Cy_03_01_TD_PI_08_FLIR}
-
-\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
-\input{\repExo/\nomExo/\nomExo.tex}
 
 \end{document}
-
-
